@@ -1,4 +1,4 @@
-defmodule Key do
+defmodule KeyReplacement do
   def replace_keys(data, key_map) when is_map(data) do
     data
     |> Enum.reduce(%{}, fn

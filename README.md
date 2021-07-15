@@ -8,7 +8,7 @@ id_maps = %{
   2 => :Secondary
 }
 
-result = replace_keys(data, id_maps)
+result = KeyReplacement.replace_keys(data, id_maps)
 ```
 
 ### Example Usage
@@ -28,7 +28,16 @@ In this example, I would like to replace the ID's `1` & `2` with `:primary` and 
 ]
 ```
 
-And I would like the following output:
+So, I create this map of KVPs
+
+```elixir
+%{
+  1 => :primary,
+  2 => :secondary
+}
+```
+
+After calling `KeyReplacement.replace_keys data,key_map` I get the following output:
 
 ```elixir
 [
@@ -41,11 +50,4 @@ And I would like the following output:
     }
   }
 ]
-```
-
-```elixir
-%{
-  1 => :Primary,
-  2 => :Secondary
-}
 ```
